@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,13 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 })
 export class AppComponent {
   title = 'app';
+  headerKey = ''
+  headerValue = '';
+  queryKey = '';
+  queryValue = '';
+  authUsername = '';
+  authPassword  = '';
+  data = '';
+  
+  
 }

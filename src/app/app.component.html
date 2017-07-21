@@ -7,26 +7,27 @@
 </div>
 <div class="well">
   <h2>Headers</h2>
-  <input class="form-control" placeholder="key" type="text">
-  <input class="form-control" placeholder="value" type="text">
+  <input [(ngModel)]="headerKey" class="form-control" placeholder="key" type="text">
+  <input [(ngModel)]="headerValue" class="form-control" placeholder="value" type="text">
   <button>Delete</button>
   <button>Add</button>
   
   <h2>Query Parameters</h2>
-  <input class="form-control" placeholder="key"type="text">
-  <input class="form-control" placeholder="value" type="text">
+  <input [(ngModel)]="queryKey" class="form-control" placeholder="key"type="text">
+  <input [(ngModel)]="queryValue" class="form-control" placeholder="value" type="text">
   <button>Delete</button>
   <button>Add</button>
   
   <h2>Authentication</h2>
-  <input class="form-control" placeholder="username" type="text">
-  <input class="form-control" placeholder="password" type="text">
+  <input [(ngModel)]="authUsername" class="form-control" placeholder="username" type="text">
+  <input [(ngModel)]="authPassword" class="form-control" placeholder="password" type="text">
   <button>Delete</button>
 
   <h2>Data</h2>
-  <select>JSON</select>
+  <select class="form-control">JSON</select>
   <button>Format Text</button>
-  <textarea>Data goes here</textarea>
+  <textarea [(ngModel)]="data">Data goes here</textarea>
+  {{data}}
 
   <h2>Method</h2>
   <select></select>
