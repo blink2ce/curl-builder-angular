@@ -1,6 +1,12 @@
 import { Component, Input } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from '@angular/forms';
+import { Header } from './header';
+
+const HEADERS: Header[] = [
+  {key:'hi', value:'there'},
+  {key:'cute', value:'doggy'}
+]
 
 @Component({
   selector: 'app-root',
@@ -8,6 +14,7 @@ import {FormsModule} from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  headers = HEADERS;
   title = 'app';
   headerKey = ''
   headerValue = '';
@@ -16,6 +23,6 @@ export class AppComponent {
   authUsername = '';
   authPassword  = '';
   data = '';
-  
+
   
 }

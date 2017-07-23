@@ -7,8 +7,11 @@
 </div>
 <div class="well">
   <h2>Headers</h2>
-  <input [(ngModel)]="headerKey" class="form-control" placeholder="key" type="text">
-  <input [(ngModel)]="headerValue" class="form-control" placeholder="value" type="text">
+  <div *ngFor="let header of headers">
+    <input [(ngModel)]="header.key" class="form-control" value={{header.key}} type="text">
+    <input  [(ngModel)]="header.value" class="form-control" value={{header.value}} type="text">
+    {{header.key}}
+  </div>
   <button>Delete</button>
   <button>Add</button>
   
@@ -27,7 +30,6 @@
   <select class="form-control">JSON</select>
   <button>Format Text</button>
   <textarea [(ngModel)]="data">Data goes here</textarea>
-  {{data}}
 
   <h2>Method</h2>
   <select></select>
