@@ -1,44 +1,62 @@
 <!DOCTYPE html>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+<html lang="en">
 
-<div class="well title">
-  <h1>Curl Builder</h1>
-  <p> by <a>@scottneaves</a></p>
-</div>
-<div class="well">
-  <h2>Headers</h2>
-  <div *ngFor="let header of headers">
-    <input [(ngModel)]="header.key" class="form-control" value={{header.key}} type="text">
-    <input  [(ngModel)]="header.value" class="form-control" value={{header.value}} type="text">
+<head>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div class="well title">
+    <h1>Curl Builder</h1>
+    <p> by <a>@scottneaves</a></p>
   </div>
-  <button (click)="deleteKeyValue(headers)">Delete</button>
-  <button (click)="addKeyValue(headers)">Add</button>
   
-  <h2>Query Parameters</h2>
-  <div *ngFor="let qparam of queryParameters">
-    <input [(ngModel)]="qparam.key" class="form-control" placeholder="key"type="text">
-    <input [(ngModel)]="qparam.value" class="form-control" placeholder="value" type="text">
+  <div class="container">
+    <h2>Headers</h2>
+    <div *ngFor="let header of headers">
+      <input [(ngModel)]="header.key" class="form-control" value={{header.key}} type="text">
+      <input [(ngModel)]="header.value" class="form-control" value={{header.value}} type="text">
+    </div>
+    <div>
+      <button (click)="deleteKeyValue(headers)">Delete</button>
+      <button (click)="addKeyValue(headers)">Add</button>
+    </div>
+
+    <h2>Query Parameters</h2>
+    <div *ngFor="let qparam of queryParameters">
+      <input [(ngModel)]="qparam.key" class="form-control" placeholder="key" type="text">
+      <input [(ngModel)]="qparam.value" class="form-control" placeholder="value" type="text">
+    </div>
+    <div>
+      <button (click)="deleteKeyValue(queryParameters)">Delete</button>
+      <button (click)="addKeyValue(queryParameters)">Add</button>
+    </div>
+
+    <h2>Authentication</h2>
+    <input [(ngModel)]="authUsername" class="form-control" placeholder="username" type="text">
+    <input [(ngModel)]="authPassword" class="form-control" placeholder="password" type="text">
+    <button>Delete</button>
+
+    <div class="row">
+      <h2>Data</h2>
+      <button>Format Text</button>
+      <div class="col-xs-6 col-sm-3">
+        <select class="form-control">JSON</select>
+      </div>
+      <textarea [(ngModel)]="data">Data goes here</textarea>
+    </div>
+
+    <h2>Method</h2>
+    <select></select>
+    <input class="form-control" type="text">
+
   </div>
-  <button (click)="deleteKeyValue(queryParameters)">Delete</button>
-  <button (click)="addKeyValue(queryParameters)">Add</button>
-  
-  <h2>Authentication</h2>
-  <input [(ngModel)]="authUsername" class="form-control" placeholder="username" type="text">
-  <input [(ngModel)]="authPassword" class="form-control" placeholder="password" type="text">
-  <button>Delete</button>
-
-  <h2>Data</h2>
-  <select class="form-control">JSON</select>
-  <button>Format Text</button>
-  <textarea [(ngModel)]="data">Data goes here</textarea>
-
-  <h2>Method</h2>
-  <select></select>
-  <input class="form-control" type="text">
-</div>
-
-<div class="well">
-  <textarea></textarea>
-  <button>New</button>
-  <button>Save</button>
-</div>
+  <div class="container">
+    <div class="well">
+      <textarea></textarea>
+      <button>New</button>
+      <button>Save</button>
+    </div>
+  </div>
+</body>
