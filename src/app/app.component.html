@@ -11,7 +11,7 @@
     <h1>Curl Builder</h1>
     <p> by <a>@scottneaves</a></p>
   </div>
-  
+
   <div class="container">
     <h2>Headers</h2>
     <div *ngFor="let header of headers">
@@ -40,11 +40,15 @@
 
     <div class="row">
       <h2>Data</h2>
-      <button>Format Text</button>
       <div class="col-xs-6 col-sm-3">
-        <select class="form-control">JSON</select>
+        <select class="form-control">
+          <option *ngFor="let dataoption of dataoptions" value={{dataoption}}>{{dataoption}}</option>
+        </select>
       </div>
-      <textarea [(ngModel)]="data">Data goes here</textarea>
+      <div class="col-xs-12">
+        <button>Format Text</button>
+        <textarea [(ngModel)]="data">Data goes here</textarea>
+      </div>
     </div>
 
     <h2>Method</h2>

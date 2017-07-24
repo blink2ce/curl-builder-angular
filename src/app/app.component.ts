@@ -10,6 +10,7 @@ const HEADERS: KeyValue[] = [
 const QUERYPARAMS: KeyValue[] = [
   {key:'I am', value:'A query parameter'}
 ]
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -18,6 +19,7 @@ const QUERYPARAMS: KeyValue[] = [
 export class AppComponent {
   headers = HEADERS;
   queryParameters = QUERYPARAMS;
+  dataoptions = ['Plain Text', 'JSON', 'XML']
   title = 'app';
   authUsername = '';
   authPassword  = '';
