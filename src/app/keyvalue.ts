@@ -1,4 +1,4 @@
-export class Header {
+export class KeyValue {
     key: string;
     value: string;
 }

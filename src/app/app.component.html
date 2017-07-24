@@ -11,14 +11,16 @@
     <input [(ngModel)]="header.key" class="form-control" value={{header.key}} type="text">
     <input  [(ngModel)]="header.value" class="form-control" value={{header.value}} type="text">
   </div>
-  <button (click)="deleteHeader()">Delete</button>
-  <button (click)="addHeader()">Add</button>
+  <button (click)="deleteKeyValue(headers)">Delete</button>
+  <button (click)="addKeyValue(headers)">Add</button>
   
   <h2>Query Parameters</h2>
-  <input [(ngModel)]="queryKey" class="form-control" placeholder="key"type="text">
-  <input [(ngModel)]="queryValue" class="form-control" placeholder="value" type="text">
-  <button>Delete</button>
-  <button>Add</button>
+  <div *ngFor="let qparam of queryParameters">
+    <input [(ngModel)]="qparam.key" class="form-control" placeholder="key"type="text">
+    <input [(ngModel)]="qparam.value" class="form-control" placeholder="value" type="text">
+  </div>
+  <button (click)="deleteKeyValue(queryParameters)">Delete</button>
+  <button (click)="addKeyValue(queryParameters)">Add</button>
   
   <h2>Authentication</h2>
   <input [(ngModel)]="authUsername" class="form-control" placeholder="username" type="text">

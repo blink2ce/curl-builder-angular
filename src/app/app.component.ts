@@ -1,13 +1,15 @@
 import { Component, Input } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from '@angular/forms';
-import { Header } from './header';
+import { KeyValue } from './keyvalue';
 
-const HEADERS: Header[] = [
+const HEADERS: KeyValue[] = [
   {key:'hi', value:'there'},
   {key:'cute', value:'doggy'}
 ]
-
+const QUERYPARAMS: KeyValue[] = [
+  {key:'I am', value:'A query parameter'}
+]
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,19 +17,16 @@ const HEADERS: Header[] = [
 })
 export class AppComponent {
   headers = HEADERS;
+  queryParameters = QUERYPARAMS;
   title = 'app';
-  headerKey = ''
-  headerValue = '';
-  queryKey = '';
-  queryValue = '';
   authUsername = '';
   authPassword  = '';
   data = '';
-  addHeader(){
-    HEADERS.push({key:'', value: ''});
+  addKeyValue(array){
+    array.push({key:'', value: ''});
   }
-  deleteHeader(){
-    HEADERS.pop();
+  deleteKeyValue(array){
+    array.pop();
   }
   
 }
