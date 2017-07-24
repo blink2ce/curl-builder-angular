@@ -23,6 +23,11 @@ export class AppComponent {
   authUsername = '';
   authPassword  = '';
   data = '';
-
+  addHeader(){
+    HEADERS.push({key:'', value: ''});
+  }
+  deleteHeader(){
+    HEADERS.pop();
+  }
   
 }

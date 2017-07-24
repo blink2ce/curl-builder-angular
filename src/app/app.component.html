@@ -10,10 +10,9 @@
   <div *ngFor="let header of headers">
     <input [(ngModel)]="header.key" class="form-control" value={{header.key}} type="text">
     <input  [(ngModel)]="header.value" class="form-control" value={{header.value}} type="text">
-    {{header.key}}
   </div>
-  <button>Delete</button>
-  <button>Add</button>
+  <button (click)="deleteHeader()">Delete</button>
+  <button (click)="addHeader()">Add</button>
   
   <h2>Query Parameters</h2>
   <input [(ngModel)]="queryKey" class="form-control" placeholder="key"type="text">
