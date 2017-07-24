@@ -12,48 +12,48 @@
     <p> by <a>@scottneaves</a></p>
   </div>
 
-  <div class="container">
-    <h2>Headers</h2>
-    <div *ngFor="let header of headers">
-      <input [(ngModel)]="header.key" class="form-control" value={{header.key}} type="text">
-      <input [(ngModel)]="header.value" class="form-control" value={{header.value}} type="text">
-    </div>
-    <div>
-      <button (click)="deleteKeyValue(headers)">Delete</button>
-      <button (click)="addKeyValue(headers)">Add</button>
-    </div>
+  <form>
+    <div class="container">
+      <h2>Headers</h2>
+      <div *ngFor="let header of headers">
+        <input [(ngModel)]="header.key" class="form-control" value={{header.key}} name="{{header.key}}" type="text">
+        <input [(ngModel)]="header.value" class="form-control" value={{header.value}} name="{{header.value}}" type="text">
+      </div>
+      <div>
+        <button class="btn btn-primary" (click)="deleteKeyValue(headers)">Delete</button>
+        <button class="btn btn-primary" (click)="addKeyValue(headers)">Add</button>
+      </div>
 
-    <h2>Query Parameters</h2>
-    <div *ngFor="let qparam of queryParameters">
-      <input [(ngModel)]="qparam.key" class="form-control" placeholder="key" type="text">
-      <input [(ngModel)]="qparam.value" class="form-control" placeholder="value" type="text">
-    </div>
-    <div>
-      <button (click)="deleteKeyValue(queryParameters)">Delete</button>
-      <button (click)="addKeyValue(queryParameters)">Add</button>
-    </div>
+      <h2>Query Parameters</h2>
+      <div *ngFor="let qparam of queryParameters">
+        <input [(ngModel)]="qparam.key" class="form-control" placeholder="key" name="Key" type="text">
+        <input [(ngModel)]="qparam.value" class="form-control" placeholder="value" name="Value" type="text">
+      </div>
+      <div>
+        <button class="btn btn-primary" (click)="deleteKeyValue(queryParameters)">Delete</button>
+        <button class="btn btn-primary" (click)="addKeyValue(queryParameters)">Add</button>
+      </div>
 
-    <h2>Authentication</h2>
-    <input [(ngModel)]="authUsername" class="form-control" placeholder="username" type="text">
-    <input [(ngModel)]="authPassword" class="form-control" placeholder="password" type="text">
-    <button>Delete</button>
+      <h2>Authentication</h2>
+      <div>
+        <input [(ngModel)]="authUsername" class="form-control" placeholder="username" name="username" type="text">
+        <input [(ngModel)]="authPassword" class="form-control" placeholder="password" name="password" type="text">
+      </div>
+      <div>
+        <button class="btn btn-primary">Delete</button>
+      </div>
 
-    <div class="row">
       <h2>Data</h2>
-      <div class="col-xs-6 col-sm-3">
+      <div class="row">
         <select class="form-control">
           <option *ngFor="let dataoption of dataoptions" value={{dataoption}}>{{dataoption}}</option>
         </select>
+        <button class="btn btn-primary">Format Text</button>
       </div>
-    <button>Format Text</button>
-    <div class="row">
-      <div class="col-xs-12">
-        <textarea class="form-control" [(ngModel)]="data">Data goes here</textarea>
+      <div class="row">
+          <textarea class="form-control col-xs-12" [(ngModel)]="data" name="data">Data goes here</textarea>
       </div>
-    </div>
-    </div>
 
-  <div class="row">
     <h2>Method</h2>
     <div class="col-xs-3 col-sm-3">
       <select class="form-control">
@@ -63,13 +63,12 @@
     <div class="col-xs-7 col-sm-7">
       <input class="form-control" type="text">
     </div>
-  </div>
-  </div>
-  <div class="container">
-    <div class="well">
-      <textarea></textarea>
-      <button>New</button>
-      <button>Save</button>
     </div>
+</form>
+  <div class="resultsContainer container well">
+      <textarea class="form-control"></textarea>
+      <button class="btn btn-primary">New</button>
+      <button class="btn btn-primary">Save</button>
   </div>
+
 </body>

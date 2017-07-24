@@ -5,3 +5,7 @@
 div{
     margin:20px;
 }
+
+.resultsContainer{
+    background-color: darkgreen;
+}
