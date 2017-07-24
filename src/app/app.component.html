@@ -45,16 +45,25 @@
           <option *ngFor="let dataoption of dataoptions" value={{dataoption}}>{{dataoption}}</option>
         </select>
       </div>
+    <button>Format Text</button>
+    <div class="row">
       <div class="col-xs-12">
-        <button>Format Text</button>
-        <textarea [(ngModel)]="data">Data goes here</textarea>
+        <textarea class="form-control" [(ngModel)]="data">Data goes here</textarea>
       </div>
     </div>
+    </div>
 
+  <div class="row">
     <h2>Method</h2>
-    <select></select>
-    <input class="form-control" type="text">
-
+    <div class="col-xs-3 col-sm-3">
+      <select class="form-control">
+        <option *ngFor="let httpoption of httpoptions" value="{{httpoption}}">{{httpoption}}</option>
+      </select>
+    </div>
+    <div class="col-xs-7 col-sm-7">
+      <input class="form-control" type="text">
+    </div>
+  </div>
   </div>
   <div class="container">
     <div class="well">

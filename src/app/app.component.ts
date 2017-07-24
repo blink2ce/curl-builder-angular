@@ -19,7 +19,8 @@ const QUERYPARAMS: KeyValue[] = [
 export class AppComponent {
   headers = HEADERS;
   queryParameters = QUERYPARAMS;
-  dataoptions = ['Plain Text', 'JSON', 'XML']
+  dataoptions = ['Plain Text', 'JSON', 'XML'];
+  httpoptions = ['GET', 'PUT', 'POST', 'DELETE'];
   title = 'app';
   authUsername = '';
   authPassword  = '';
