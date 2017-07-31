@@ -25,14 +25,15 @@ export class AppComponent {
   authUsername = 'ho!';
   authPassword  = '';
   data = 'hum!';
+  result = '';
   addKeyValue(array){
     array.push({key:'', value: ''});
   }
   deleteKeyValue(array){
     array.pop();
   }
-  makeAlert(){
-    alert("Whoa there!");
+  makeResult(){
+    this.result = 'curl --verbose ' + this.authUsername + ' ' + this.authPassword + ' ' + this.data + ' ' + this.headers[0].key + ' ' + this.queryParameters[0].key;
   }
   
 }
