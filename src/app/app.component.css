@@ -9,3 +9,7 @@ div{
 .resultsContainer{
     background-color: darkgreen;
 }
+
+#result{
+    height:200px;
+}

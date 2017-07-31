@@ -20,11 +20,12 @@ export class AppComponent {
   title = 'app';
   headers = HEADERS;
   queryParameters = QUERYPARAMS;
-  dataoptions = ['Plain Text', 'JSON', 'XML'];
-  httpoptions = ['GET', 'PUT', 'POST', 'DELETE'];
   authUsername = 'ho!';
   authPassword  = '';
+  dataoptions = ['Plain Text', 'JSON', 'XML'];
   data = 'hum!';
+  httpoptions = ['GET', 'PUT', 'POST', 'DELETE'];
+  url = 'www.example.com';
   result = '';
   addKeyValue(array){
     array.push({key:'', value: ''});
@@ -32,8 +33,25 @@ export class AppComponent {
   deleteKeyValue(array){
     array.pop();
   }
+  printHeaders(array){
+    var text = '';
+    for(var el in array){
+      text = text + ' --header ' + array[el].key + ':' + array[el].value;
+    }
+    return text;
+  }
+  printQueryParameters(array){
+    var text = '';
+    for(var el in array){
+      if(el != array[0]){
+        text = text + "&";
+      }
+      text = text + '?' + array[el].key + '=' + array[el].value;
+    }
+    return text;
+  }
   makeResult(){
-    this.result = 'curl --verbose ' + this.authUsername + ' ' + this.authPassword + ' ' + this.data + ' ' + this.headers[0].key + ' ' + this.queryParameters[0].key;
+    this.result = 'curl --verbose ' + this.printHeaders(this.headers) + ' ' + this.url + ' ' +this.authUsername + ' ' + this.authPassword + ' ' + this.data + ' ' + this.printQueryParameters(this.queryParameters);
   }
   
 }
