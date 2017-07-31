@@ -51,7 +51,7 @@
         <button class="btn btn-primary">Format Text</button>
       </div>
       <div class="row">
-        <textarea class="form-control col-xs-12" [(ngModel)]="data" value="data" name="data">{{data}}</textarea>
+        <textarea class="form-control col-xs-12" [(ngModel)]="data" (change)="makeAlert()" value="data" name="data">{{data}}</textarea>
       </div>
 
       <h2>Method</h2>
@@ -65,5 +65,5 @@
       </div>
     </div>
   </form>
- <on-changes [data]="data" [authUsername]="authUsername" [authPassword]="authPassword"></on-changes>
+ <on-changes [authUsername]="authUsername" [authPassword]="authPassword"></on-changes>
 </body>

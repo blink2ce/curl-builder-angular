@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from '@angular/forms';
 import { KeyValue } from './keyvalue';
@@ -16,23 +16,23 @@ const QUERYPARAMS: KeyValue[] = [
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnChanges {
+export class AppComponent {
+  title = 'app';
   headers = HEADERS;
   queryParameters = QUERYPARAMS;
   dataoptions = ['Plain Text', 'JSON', 'XML'];
   httpoptions = ['GET', 'PUT', 'POST', 'DELETE'];
-  title = 'app';
-  @Input() authUsername = 'ho!';
-  @Input() authPassword  = '';
-  @Input() data = 'hum!';
+  authUsername = 'ho!';
+  authPassword  = '';
+  data = 'hum!';
   addKeyValue(array){
     array.push({key:'', value: ''});
   }
   deleteKeyValue(array){
     array.pop();
   }
-  result = this.headers[0].key; 
-  ngOnChanges(changes: SimpleChanges){
-    console.log("Something changed!");
+  makeAlert(){
+    alert("Whoa there!");
   }
+  
 }
