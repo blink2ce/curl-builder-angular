@@ -45,10 +45,10 @@
 
       <h2>Data</h2>
       <div class="row">
-        <select class="form-control">
-        <option *ngFor="let dataoption of dataoptions" value={{dataoption}}>{{dataoption}}</option>
+        <select name="dataOptions" [(ngModel)]="dataOptionSelected" class="form-control">
+        <option *ngFor="let dataoption of dataoptions" [value]="dataoption">{{dataoption}}</option>
       </select>
-        <button class="btn btn-primary">Format Text</button>
+      <button class="btn btn-primary">Format Text</button>
       </div>
       <div class="row">
         <textarea class="form-control col-xs-12" [(ngModel)]="data" (keyup)="makeResult()" value="data" name="data">{{data}}</textarea>
@@ -56,7 +56,7 @@
 
       <h2>Method</h2>
       <div class="col-xs-3 col-sm-3">
-        <select class="form-control">
+        <select name="httpOptions" [(ngModel)]="httpOptionSelected" class="form-control">
         <option *ngFor="let httpoption of httpoptions" value="{{httpoption}}">{{httpoption}}</option>
       </select>
       </div>

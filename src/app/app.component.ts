@@ -23,10 +23,12 @@ export class AppComponent {
   authUsername = 'ho!';
   authPassword  = '';
   dataoptions = ['Plain Text', 'JSON', 'XML'];
+  dataOptionSelected = 'JSON';
   data = 'hum!';
   httpoptions = ['GET', 'PUT', 'POST', 'DELETE'];
+  httpOptionSelected = 'GET';
   url = 'www.example.com';
-  result = '';
+  result = 'curl --verbose ' + this.printHeaders(this.headers) + ' ' + this.url + ' ' +this.authUsername + ' ' + this.authPassword + ' ' + this.data + ' ' + this.printQueryParameters(this.queryParameters);
   addKeyValue(array){
     array.push({key:'', value: ''});
   }
