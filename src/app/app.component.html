@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
+<body (keyup)="makeResult()" (click)="makeResult()"> <!---->
   <div class="well title">
     <h1>Curl Builder</h1>
     <p> by <a>@scottneaves</a></p>
@@ -16,8 +16,8 @@
     <div class="container">
       <h2>Headers</h2>
       <div *ngFor="let header of headers">
-        <input [(ngModel)]="header.key" (keyup)="makeResult()" class="form-control" value={{header.key}} [ngModelOptions]="{standalone: true}" type="text">
-        <input [(ngModel)]="header.value" (keyup)="makeResult()" class="form-control" value={{header.value}}  [ngModelOptions]="{standalone: true}" type="text">
+        <input [(ngModel)]="header.key"  class="form-control" value={{header.key}} placeholder="key" [ngModelOptions]="{standalone: true}" type="text">
+        <input [(ngModel)]="header.value"  class="form-control" value={{header.value}}  placeholder="value" [ngModelOptions]="{standalone: true}" type="text">
       </div>
       <div>
         <button class="btn btn-primary" (click)="deleteKeyValue(headers)">Delete</button>
@@ -26,8 +26,8 @@
 
       <h2>Query Parameters</h2>
       <div *ngFor="let qparam of queryParameters">
-        <input [(ngModel)]="qparam.key" (keyup)="makeResult()" class="form-control" value={{qparam.key}} placeholder="key"  [ngModelOptions]="{standalone: true}" type="text">
-        <input [(ngModel)]="qparam.value" (keyup)="makeResult()" class="form-control" value={{qparam.value}} placeholder="value"  [ngModelOptions]="{standalone: true}" type="text">
+        <input [(ngModel)]="qparam.key"  class="form-control" value={{qparam.key}} placeholder="key"  [ngModelOptions]="{standalone: true}" type="text">
+        <input [(ngModel)]="qparam.value"  class="form-control" value={{qparam.value}} placeholder="value"  [ngModelOptions]="{standalone: true}" type="text">
       </div>
       <div>
         <button class="btn btn-primary" (click)="deleteKeyValue(queryParameters)">Delete</button>
@@ -36,8 +36,8 @@
 
       <h2>Authentication</h2>
       <div>
-        <input [(ngModel)]="authUsername" (keyup)="makeResult()" class="form-control" placeholder="username" name="authUsername" type="text">
-        <input [(ngModel)]="authPassword" (keyup)="makeResult()" class="form-control" placeholder="password" name="authPassword" type="text">
+        <input [(ngModel)]="authUsername"  class="form-control" placeholder="username" name="authUsername" type="text">
+        <input [(ngModel)]="authPassword"  class="form-control" placeholder="password" name="authPassword" type="text">
       </div>
       <div>
         <button class="btn btn-primary">Delete</button>
@@ -51,7 +51,7 @@
       <button class="btn btn-primary">Format Text</button>
       </div>
       <div class="row">
-        <textarea class="form-control col-xs-12" [(ngModel)]="data" (keyup)="makeResult()" value="data" name="data">{{data}}</textarea>
+        <textarea class="form-control col-xs-12" [(ngModel)]="data"  value="data" name="data">{{data}}</textarea>
       </div>
 
       <h2>Method</h2>
