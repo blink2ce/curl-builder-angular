@@ -6,17 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body (keyup)="makeResult()" (click)="makeResult()"> <!---->
+<body (keyup)="makeResult()" (click)="makeResult()">
   <div class="well title">
     <h1>Curl Builder</h1>
     <p> by <a>@scottneaves</a></p>
-  </div>
-
+  </div>            
   <form>
     <div class="container">
       <h2>Headers</h2>
       <div *ngFor="let header of headers">
-        <input [(ngModel)]="header.key"  class="form-control" value={{header.key}} placeholder="key" [ngModelOptions]="{standalone: true}" type="text">
+        <ng2-completer [(ngModel)]="header.key" [inputClass]="'form-control'" [datasource]="dataService" [minSearchLength]="0" placeholder="key" [ngModelOptions]="{standalone: true}"></ng2-completer>
         <input [(ngModel)]="header.value"  class="form-control" value={{header.value}}  placeholder="value" [ngModelOptions]="{standalone: true}" type="text">
       </div>
       <div>
