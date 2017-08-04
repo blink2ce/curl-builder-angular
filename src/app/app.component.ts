@@ -78,7 +78,6 @@ export class AppComponent implements OnInit{
 
   constructor(private completerService: CompleterService) {
     this.dataService = completerService.local(Object.keys(this.headerSuggestions));
-    console.log(this.headerSuggestions)
   }
 
 
