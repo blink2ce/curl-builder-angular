@@ -3,7 +3,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from '@angular/forms';
 import { KeyValue } from './keyvalue';
 import { CompleterService, CompleterData } from 'ng2-completer';
-
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/Rx';
 
 const HEADERS: KeyValue[] = [{key:'', value:''}]
 const QUERYPARAMS: KeyValue[] = [{key:'', value:''}]
@@ -45,7 +46,7 @@ export class AppComponent implements OnInit{
     var headersText = "";
     for(var el in this.headers){
        if(this.headers[el].key.length > 0 && this.headers[el].value.length > 0){
-        headersText =  + headersText + ' --header \"' + this.headers[el].key + '\":\"' + this.headers[el].value + '\" ';
+        headersText = headersText + ' --header \"' + this.headers[el].key + '\":\"' + this.headers[el].value + '\" ';
       }
     }
 
@@ -71,14 +72,12 @@ export class AppComponent implements OnInit{
 
     return this.result = 'curl --verbose ' + headersText + ' ' + authentication + ' ' + methodText + ' ' + this.data + ' ' + QPtext;
   }
-  
+
 
   protected dataService: CompleterData;
-  protected dataService2: CompleterData;
 
   constructor(private completerService: CompleterService) {
     this.dataService = completerService.local(Object.keys(this.headerSuggestions));
   }
-
 
 }
